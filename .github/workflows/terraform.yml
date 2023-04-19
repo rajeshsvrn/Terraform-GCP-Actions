@@ -24,7 +24,7 @@ jobs:
         with:
           token_format: 'access_token'
           workload_identity_provider: 'projects/777252214638/locations/global/workloadIdentityPools/k8s-newpool/providers/k8s-provider'
-          service_account: gcp-sa-key@${{ env.GCP_PROJECT_ID }}.iam.gserviceaccount.com
+          service_account: terraform-sa@${{ env.GCP_PROJECT_ID }}.iam.gserviceaccount.com
           
       - uses: hashicorp/setup-terraform@v2
       - name: Terraform init
