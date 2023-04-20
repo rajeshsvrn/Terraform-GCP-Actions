@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"bucket","Source":"./modules/cloud-storage","Dir":"modules/cloud-storage"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"bucket","Source":"./modules/cloud-storage","Dir":"modules/cloud-storage"},{"Key":"bucket1","Source":"./modules/cloud-storage","Dir":"modules/cloud-storage"}]}

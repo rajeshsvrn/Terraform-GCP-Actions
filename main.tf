@@ -5,6 +5,20 @@ location   = var.location
 #credentials = var.credentials
 }
 
+module "bucket1" {
+source = "./modules/cloud-storage"
+bucket_name = var.bucket_name1
+location   = var.location
+#credentials = var.credentials
+}
+
+module "bucket2" {
+source = "./modules/cloud-storage"
+bucket_name = var.bucket_name2
+location   = var.location
+#credentials = var.credentials
+}
+
 locals {
   project_id = "terraform-learn-382907"
   repo       = "rajeshsvrn/Terraform-GCP-Actions" 
