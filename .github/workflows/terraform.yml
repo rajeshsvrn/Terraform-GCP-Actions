@@ -21,3 +21,11 @@ jobs:
 
       - name: "List buckets"
         run: "gcloud storage ls"
+
+      - name: Run Terraform apply
+        run: |
+          cd terraform
+          terraform init
+          terraform apply -auto-approve
+
+
