@@ -27,9 +27,9 @@ jobs:
 
       - name: Terraform plan
         run: terraform plan
-        working-directory: ./Terraform-GCP-Actions
+        working-directory: ../Terraform-GCP-Actions
 
       - name: Terraform apply
         run: terraform apply -auto-approve 
-        working-directory: ./Terraform-GCP-Actions
+        working-directory: ../Terraform-GCP-Actions
 
