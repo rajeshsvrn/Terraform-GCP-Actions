@@ -10,17 +10,17 @@ locals {
   repo       = "rajeshsvrn/Terraform-GCP-Actions" 
 }
 
-resource "google_iam_workload_identity_pool" "github_pool" {
+resource "google_iam_workload_identity_pool" "github_pool2" {
   project                   = local.project_id
-  workload_identity_pool_id = "github-pool"
-  display_name              = "GitHub pool"
+  workload_identity_pool_id = "github-pool2"
+  display_name              = "GitHub pool2"
   description               = "Identity pool for GitHub deployments"
 }
 
 resource "google_iam_workload_identity_pool_provider" "github" {
   project                            = local.project_id
-  workload_identity_pool_id          = google_iam_workload_identity_pool.github_pool.workload_identity_pool_id
-  workload_identity_pool_provider_id = "github-provider"
+  workload_identity_pool_id          = google_iam_workload_identity_pool.github_pool2.workload_identity_pool_id
+  workload_identity_pool_provider_id = "github-provider2"
   attribute_mapping = {
     "google.subject"       = "assertion.sub"
     "attribute.actor"      = "assertion.actor"
@@ -42,11 +42,11 @@ resource "google_service_account" "github_actions" {
 resource "google_service_account_iam_member" "workload_identity_user" {
   service_account_id = google_service_account.github_actions.name
   role               = "roles/iam.workloadIdentityUser"
-  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github_pool.name}/attribute.repository/${local.repo}"
+  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github_pool2.name}/attribute.repository/${local.repo}"
 }
 
 output "workload_identity_provider" {
-  value = "${google_iam_workload_identity_pool.github_pool.name}/providers/${google_iam_workload_identity_pool_provider.github.workload_identity_pool_provider_id}"
+  value = "${google_iam_workload_identity_pool.github_pool2.name}/providers/${google_iam_workload_identity_pool_provider.github.workload_identity_pool_provider_id}"
 }
 
 output "service_account" {
