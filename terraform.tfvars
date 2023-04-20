@@ -1,6 +1,6 @@
 bucket_name = "my-project-bucket-name-is-final-bucket"
 bucket_name1 = "gitaction-final-bucket"
-bucket_name2 = "gitaction-final-bucket"
+bucket_name2 = "gitaction-final-bucket2"
 location = "us-central1"
 project_id = "terraform-learn-382907"
 region = "us-central1"
