@@ -15,7 +15,7 @@ project = var.project_id
 region = var.region
 zone = "us-central1-a"
 #credentials = "C:\\Users\\RASUVARN\\Downloads\\terraform-learn-382907-f703fb75e1d6.json"
-#comment gfwe4tfu
+#comment gfwe4tfufguygf
 
 
 }
